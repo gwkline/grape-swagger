@@ -56,6 +56,12 @@ module GrapeSwagger
       output[:tags]        = tags unless tags.empty? || paths.blank?
       output[:paths]       = paths unless paths.blank?
       output[:definitions] = definitions unless definitions.blank?
+      output[:components] = {
+        securitySchemes: {
+          authorization: {
+            type: "http",
+            scheme: "bearer" }
+        } }
 
       output
     end
